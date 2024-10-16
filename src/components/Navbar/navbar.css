@@ -1,7 +1,8 @@
 .navbar{
     /* variables */
-    --logo-min-widht: 200px;
+    --logo-min-widht: 300px;
     --logo-size: 2rem;
+    --shadow: rgba(125, 125, 125, 0.3);
 
     align-items: center;
     background-color: var(--accent-5);
@@ -15,20 +16,19 @@
     width: 100vw;
     padding: 0 2rem ;
     box-sizing: border-box;
+    min-width: 300px;
 }
 
 .navbar__logo{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     height: 100%;
     min-width: var(--logo-min-widht);
     text-decoration: none;
-    color: rgb(var(--accent-color));
+    color: rgb(var(--accent-12));
 
 }
-.navbar__logo:hover{
-}
+
 .navbar__logo--img{
     height: 80%;
     width: 30%;
@@ -42,30 +42,27 @@
     align-items: center;
     flex: 1;
     height: 100%;
-}
-.navbar__nav ul{
-    display: flex;
     justify-content: center;
-    align-items: center;
-    flex: 1;
     gap: 1.5rem;
-    height: 100%;
-
 }
 .navbar__nav li{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     padding: 0.5rem;
     flex-basis: 150px;
     height: 100%;
     box-sizing: border-box;
     cursor: pointer;
+    position: relative;
+    transition: transform 0.25s;
 }
 
-.active{
-    background-color: var(--accent-6);
+.active,
+.navbar__toggle:hover
+{
+    background-color: var(--accent-5);
 }
 
 .active::after{
@@ -75,4 +72,70 @@
     height: 5px;
     width: 80%;
     justify-self: end;
+    animation: growWidth 0.25s forwards;
+}
+.navbar__toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--accent-12);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navbar__toggle:focus,
+.navbar__toggle:focus-visible{
+outline: 4px auto var(--accent);
+}
+
+@keyframes growWidth {
+    from {
+        width: 5%;
+    }
+    to {
+        width: 80%;
+    }
+}
+.active .navbar__nav--text {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 900px) {
+    .navbar__nav {
+        position: absolute;
+        top: 90%;
+        right: 010px;
+        background-color: var(--accent-2);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        height: min-content;
+        transform: translateY(-100%);
+        width: min-content;
+        padding: 0;
+        box-shadow: 0 0 0.6rem var(--shadow);
+    }
+    .navbar__nav--open li{
+        flex-basis: content;
+        width: 300px;
+    }
+    
+    .navbar__nav--open {
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    .navbar__toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 500px){
+    .navbar__nav{
+        width: 100%;
+    }
+    .navbar__nav li{
+        width: 100%;
+    }
 }

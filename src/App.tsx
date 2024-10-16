@@ -5,12 +5,13 @@ import './App.css'
 
 function App() {
   
-  const sections: string[] = ["option 1", "option 2", "option 3", "Sobre Nosotros"];
+  const sections: string[] = ["Section 1", "Section 2", "Section 3", "Section 4"];
+  
   const navbarProps = {
     urlLogo: "src/assets/Logo.svg",
-    altLogo: "Texto alternativo de Tu Logo",
+    altLogo: "Alternative text for your logo",
     fontLogo: "Roboto",
-    textLogo: "Tu Logo",
+    textLogo: "Logo",
     sections
   };
   const [activeSection, setActiveSection] = useState(sections[0]);

@@ -2,7 +2,7 @@
  * Navbar component
  * this component renders the navbar menu at the beginning of the application
  */
-import React from "react";
+import React, { useState } from "react";
 import './navbar.css';
 
 interface NavbarProps {
@@ -29,12 +29,20 @@ const Navbar: React.FC<NavbarProps> = ({
     textLogo,
     sections,
     activeSection,
-    onClick
+    onClick,
 }) => {
 
+    const [isMenuOpen, setMenuOpen] = useState(false)
+    const handleMenuToggle = ()=>{
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 900 ) {
+            setMenuOpen(!isMenuOpen);
+        }
+    }
     const fontTextLogo: object = {
         fontFamily: fontLogo
     }
+
 
     return (
         <nav className="navbar">
@@ -42,19 +50,20 @@ const Navbar: React.FC<NavbarProps> = ({
                 <img src={urlLogo} alt={altLogo} className="navbar__logo--img" />
                 <span style={fontTextLogo} className="navbar__logo--txt">{textLogo}</span>
             </a>
-            <nav className="navbar__nav">
-                <ul>
-                    {sections.map(section => (
-                        <li
-                            key={section}
-                            className={activeSection === section ? "active" : ""}
-                            onClick={() => onClick(section)}
-                        >
-                            {section}
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+            <ul className={`navbar__nav ${isMenuOpen ? "navbar__nav--open" : ""}`}>
+                {sections.map(section => (
+                    <li
+                        key={section}
+                        className={activeSection === section ? "active" : ""}
+                        onClick={() => {onClick(section); setTimeout(handleMenuToggle,500)}}
+                    >
+                        <span className="navbar__nav--text">{section}</span>
+                    </li>
+                ))}
+            </ul>
+            <button className="navbar__toggle" onClick={handleMenuToggle}>
+                ☰
+            </button>
         </nav>
     )
 }
