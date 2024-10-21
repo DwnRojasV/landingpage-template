@@ -1,22 +1,25 @@
 :root {
   /* Variables */
-  --accent: #2293D1;
-  --accent-1: #101920;
-  --accent-2: #131D24;
-  --accent-3: #0F2C3D;
-  --accent-4: #043652;
-  --accent-5: #0A4362;
-  --accent-6: #185172;
-  --accent-7: #256389;
-  --accent-8: #2D7AA8;
-  --accent-10: #0586C3;
-  --accent-11: #6FC1F7;
-  --accent-12: #C2E6FF;
+  --accent: rgb(34, 147, 209);
+  --accent-1: rgb(16, 25, 32);
+  --accent-2: rgb(19, 29, 36);
+  --accent-3: rgb(15, 44, 61);
+  --accent-4: rgb(4, 54, 82);
+  --accent-5: rgb(10, 67, 98);
+  --accent-6: rgb(24, 81, 114);
+  --accent-7: rgb(37, 99, 137);
+  --accent-8: rgb(45, 122, 168);
+  --accent-10: rgb(5, 134, 195);
+  --accent-11: rgb(111, 193, 247);
+  --accent-12: rgb(194, 230, 255);
+  --accent-13: rgb(220, 236, 248);
 
-  --gray: #808080;
+  --gray: rgb(128, 128, 128);
   
   --body-min-width: 340px;
   --body-min-height: 100vh;
+
+  --footer-filter-invert: 0%;
   
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -68,6 +71,9 @@ button {
     --accent-8: #5FB1E6;
     --accent-10: #0586C3;
     --accent-11: #0078B5;
-    --accent-12: #0F3952;
+    --accent-12: rgb(15, 57, 82);
+    --accent-13: rgb(10, 39, 56);
+
+  --footer-filter-invert: 100%;
   }
 }

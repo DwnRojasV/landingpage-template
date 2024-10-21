@@ -1,5 +1,9 @@
 import Navbar from './components/Navbar/Navbar.tsx';
+import Footer from './components/Footer/Footer.tsx';
 import { useEffect, useState } from 'react';
+import GITHUB from "./assets/github.svg"
+import INSTAGRAM from "./assets/instagram-logo.svg"
+import X from "./assets/x.svg"
 
 import './App.css'
 
@@ -11,9 +15,40 @@ function App() {
     urlLogo: "src/assets/Logo.svg",
     altLogo: "Alternative text for your logo",
     fontLogo: "Roboto",
-    textLogo: "Logo",
+    textLogo: "Your Brand",
     sections
-  };
+  } as const;
+
+  const footerProps = {
+    year: 2024,
+    brandName: "Your brand",
+    licence: "All Rights Reserved",
+    urlLogo: navbarProps.urlLogo,
+    altLogo: navbarProps.altLogo,
+    footerContents: [
+      {"Learn More": ["About Your Brand", "Press Releases", "Environment", "Jobs", "Privacy Policy"]},
+      {"Contact Us": ["Email: your@email.com", "+91 589 5522"]}
+    ],
+    socialTitle: "Social",
+    socialInfo: [
+      {
+      socialLink: "https://github.com/",
+      socialDescription: "Github logo" ,
+      socialIcon: GITHUB
+    },
+      {
+      socialLink: "https://x.com/",
+      socialDescription: "X logo" ,
+      socialIcon: X
+    },
+      {
+      socialLink: "https://instagram.com/",
+      socialDescription: "Github" ,
+      socialIcon: INSTAGRAM
+    }
+  ]
+  } as const;
+
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   const handleClick = (section: string) => {
@@ -47,6 +82,7 @@ function App() {
   return (
     <>
       <Navbar {...navbarProps} activeSection={activeSection} onClick={handleClick} />
+      <Footer {...footerProps} />
     </>
   )
 }
