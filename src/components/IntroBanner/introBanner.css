@@ -1,0 +1,93 @@
+.banner{
+    --circle-width: 45vw;
+    --max-width: 100vw;
+    margin-bottom: 20vh;
+}
+
+.banner,
+.banner__container--circle,
+.banner__background {
+    width: 100%;
+}
+
+.banner__container,
+.banner__background {
+    height: 80vh;
+}
+
+.banner__container,
+.banner__container--circle
+{
+    position: absolute;
+    right: 0;
+}
+
+
+.banner__container {
+    box-sizing: border-box;
+    margin-left: auto;
+    width: 70%;
+}
+
+.banner__container--circle {
+    align-items: center;
+    background-color: var(--accent);
+    clip-path: circle(84.4% at 86% 38%);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vh, 2rem);
+    height: 100%;
+    justify-content: center;
+    max-width: var(--circle-width);
+    min-width: var(--circle-width);
+    padding-left: 25%;
+    padding-right: 1rem;
+}
+
+
+.banner__container--title {
+    color: var(--on-accent);
+    font-family: 'Montserrat', 'Lucida sans', sans-serif;
+    font-size: clamp(25px, 3vw, 32px);
+    text-align: start;
+}
+
+.banner__CTA-button {
+    background-color: var(--btn-secondary-background);
+    border: transparent;
+    border-radius: 20px;
+    color: var(--on-secondary); 
+    cursor: pointer;
+    font-family: 'Montserrat', 'Lucida sans', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    height: 40px;
+    width: 200px;
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+}
+
+.banner__CTA-button:hover {
+    background-color: var(--btn-secondary-hover);
+
+}
+
+@media screen and (max-width: 1024px) {
+    .banner__container {
+        width: 100%;
+        max-width: var(--max-width);
+    }
+
+    .banner__container--circle {
+        clip-path: ellipse(100% 50% at 50% 100%);
+        justify-content: end;
+        align-items: start;
+        max-width: var(--max-width);
+        box-sizing: border-box;
+        padding: 0 2.5rem 2.5rem 2.5rem;
+    }
+
+    .banner__container--content {
+        padding: 10% 5% 5% 5%;
+    }
+}

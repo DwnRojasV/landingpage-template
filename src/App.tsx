@@ -6,10 +6,11 @@ import INSTAGRAM from "./assets/instagram-logo.svg"
 import X from "./assets/x.svg"
 
 import './App.css'
+import PageContainer from './containers/PageContainer.tsx';
 
 function App() {
   
-  const sections: string[] = ["Section 1", "Section 2", "Section 3", "Section 4"];
+  const sections: string[] = ["Home", "Section 2", "Section 3", "Section 4"];
   
   const navbarProps = {
     urlLogo: "src/assets/Logo.svg",
@@ -64,8 +65,6 @@ function App() {
         offset: element?.getBoundingClientRect().top || 0,
       };
     });
-    console.table(offsets)
-    console.log("innerHeigt: ",window.innerHeight /2)
     const visibleSection = offsets.find(offset => offset.offset >= 0 && offset.offset <= window.innerHeight / 2)
 
     if (visibleSection) {
@@ -82,6 +81,7 @@ function App() {
   return (
     <>
       <Navbar {...navbarProps} activeSection={activeSection} onClick={handleClick} />
+      <PageContainer sections={sections} />
       <Footer {...footerProps} />
     </>
   )

@@ -14,13 +14,18 @@
   --accent-12: rgb(194, 230, 255);
   --accent-13: rgb(220, 236, 248);
 
+  --on-accent: rgb(250, 253, 255);
+  --on-secondary: rgb(16, 25, 32);
+  --btn-secondary-background: rgb(226, 174, 85);
+  --btn-secondary-hover: rgb(188, 145, 70);
+
   --gray: rgb(128, 128, 128);
-  
+
   --body-min-width: 340px;
   --body-min-height: 100vh;
 
   --footer-filter-invert: 0%;
-  
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -74,6 +79,6 @@ button {
     --accent-12: rgb(15, 57, 82);
     --accent-13: rgb(10, 39, 56);
 
-  --footer-filter-invert: 100%;
+    --footer-filter-invert: 100%;
   }
 }
