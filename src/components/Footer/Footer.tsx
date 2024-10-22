@@ -52,7 +52,6 @@ const Footer: React.FC<FooterProps> = ({
                     <h5 className="footer__content--title">{socialTitle}</h5>
                     <div className="footer__social--wrap">
                         {socialInfo.map((element, index) => {
-                            console.log(element)
                             return (
                                 <a key={index} href={element.socialLink || ""} target="_blank">
                                     <img className="footer__social--icon" src={element.socialIcon || ""} alt={element.socialDescription || ""} />

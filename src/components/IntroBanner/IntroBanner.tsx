@@ -5,17 +5,19 @@ import "./introBanner.css";
 interface IntroBannerProps {
     introBannerMessage:string,
     ctaButtonText: string,
-    imgInfo: string[]
+    imgInfo: string[],
+    idBanner: string
 }
 
 const IntroBanner: React.FC<IntroBannerProps> = ({
     introBannerMessage = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum atque provident ad laudantium blanditiis,",
     ctaButtonText= "CTA Text",
-    imgInfo =["./elementor-placeholder-image.webp", "Placeholder image background"]
+    imgInfo =["./elementor-placeholder-image.webp", "Placeholder image background"],
+    idBanner
 })=>{
 
     return (
-        <div className="banner">
+        <div id={idBanner} className="banner">
             <div className="banner__container">
                 <div className="banner__container--circle">
                     <h1 className="banner__container--title">
