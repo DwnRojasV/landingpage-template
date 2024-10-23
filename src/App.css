@@ -6,6 +6,7 @@
   text-align: center;
 }
 .section{
-  padding-top: 10vh;
+  /* padding-top: 10vh; */
   height: 80vh;
+  scroll-margin-top: 10vh;
 }
