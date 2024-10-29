@@ -10,7 +10,7 @@ import PageContainer from './containers/PageContainer.tsx';
 
 function App() {
   
-  const sections: string[] = ["Home", "Section 2", "Section 3", "Section 4"];
+  const sections: string[] = ["Home", "Slider", "Section 3", "Section 4"];
   
   const navbarProps = {
     urlLogo: "src/assets/Logo.svg",
