@@ -17,7 +17,7 @@ const IntroBanner: React.FC<IntroBannerProps> = ({
 })=>{
 
     return (
-        <div id={idBanner} className="banner">
+        <section id={idBanner} className="banner section">
             <div className="banner__container">
                 <div className="banner__container--circle">
                     <h1 className="banner__container--title">
@@ -29,7 +29,7 @@ const IntroBanner: React.FC<IntroBannerProps> = ({
                 </div>
             </div>
             <img src={imgInfo[0]} alt={imgInfo[1]} className="banner__background" />
-        </div>
+        </section>
     );
 }
 
